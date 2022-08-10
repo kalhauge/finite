@@ -33,6 +33,6 @@ count :: forall m a. (Class.Finite a, PrimMonad m) => Counter m a -> a -> m ()
 count = countOn Class.group
 {-# INLINE count #-}
 
-toList :: forall m a. (Class.Finite a, PrimMonad m) => Counter m a -> m [(a, Int)]
+toList :: forall m a. PrimMonad m => Counter m a -> m [(a, Int)]
 toList (MkCounter i s) = liftM2 (++) (IntCounter.toList i) (StringCounter.toList s)
 {-# INLINE toList #-}
