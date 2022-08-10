@@ -1,0 +1,20 @@
+name: finite
+version: 0.1.0
+synopsis: A library for working with finite data
+maintainer: Christian Gram Kalhauge <christian@kalhauge.dk>
+github: kalhauge/finite
+category: Development
+extra-source-files: []
+
+ghc-options: -Wall -fno-warn-incomplete-uni-patterns
+
+dependencies:
+  - base >= 4.9 && < 5
+  - bytestring
+  - hashable
+  - primitive
+
+library:
+  source-dirs: src
+# verbatim:
+#    default-language: GHC2021

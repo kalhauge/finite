@@ -1,0 +1,36 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.7.
+--
+-- see: https://github.com/sol/hpack
+
+name:           finite
+version:        0.1.0
+synopsis:       A library for working with finite data
+category:       Development
+homepage:       https://github.com/kalhauge/finite#readme
+bug-reports:    https://github.com/kalhauge/finite/issues
+maintainer:     Christian Gram Kalhauge <christian@kalhauge.dk>
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/kalhauge/finite
+
+library
+  exposed-modules:
+      Finite
+      Finite.Class
+      Finite.IntCounter
+      Finite.StringCounter
+  other-modules:
+      Paths_finite
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -fno-warn-incomplete-uni-patterns
+  build-depends:
+      base >=4.9 && <5
+    , bytestring
+    , hashable
+    , primitive
+  default-language: Haskell2010
