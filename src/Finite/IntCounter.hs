@@ -39,7 +39,7 @@ countOn fn (MkCounter t e) a = do
       | slot == (-1 :: Int) -> do
         writeByteArray t i k
         writeByteArray t (i + 1) (1 :: Int)
-        MutVar.modifyMutVar' e ((a, i) :)
+        MutVar.modifyMutVar' e ((a, i + 1) :)
       -- slot is filled
       | slot == k -> do
         v <- readByteArray t (i + 1)
@@ -58,7 +58,7 @@ countOn fn (MkCounter t e) a = do
         | slot == (-1 :: Int) -> do
           writeByteArray t i k
           writeByteArray t (i + 1) (1 :: Int)
-          MutVar.modifyMutVar' e ((a, i) :)
+          MutVar.modifyMutVar' e ((a, i + 1) :)
         -- slot is filled
         | slot == k -> do
           v <- readByteArray t (i + 1)
